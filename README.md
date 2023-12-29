@@ -9,3 +9,6 @@
 # 參考文件
 * [GitHub - Cocona](https://github.com/mayuki/Cocona)
 * [YouTube - This is Best Way To Create CLI Apps in .NET](https://www.youtube.com/watch?v=4KHFrbJHCHc&ab_channel=NickChapsas) 
+
+# 沒圖沒真象
+![N6CoconaLab Demo](doc/沒圖沒真象.png)
