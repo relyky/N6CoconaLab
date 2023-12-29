@@ -1,4 +1,5 @@
 ﻿using Cocona;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +13,19 @@ namespace N6CoconaLab;
 /// </summary>
 class GreetingCommand
 {
+  IConfiguration _config;
+  public GreetingCommand(IConfiguration config)
+  {
+    _config = config;
+  }
+
   [Command("Greeting", Description = "打招呼。用 Class-based style 實作。")]
   public Task Greeting(
     [Option('n', Description = "指定名稱")] string name, 
     [Option('h', Description = "說嘿")] bool hey)
   {
     Console.WriteLine($"{(hey ? "嘿" : "哈囉")} {name ?? "來賓"}。");
+    Console.WriteLine($"OutputFolder: {_config["OutputFolder"]}");
     return Task.CompletedTask;
   }
 

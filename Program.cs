@@ -1,12 +1,16 @@
 ﻿using Cocona;
 using Cocona.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using N6CoconaLab;
 using N6CoconaLab.Services;
 using System.Xml.Linq;
 
-//CoconaApp.Run((string? name, bool hey) =>
-//    Console.WriteLine($"{(hey ? "嘿" : "哈囉")} {(name ?? "來賓")}。"));
+IConfiguration config = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddEnvironmentVariables()
+    .Build();
 
 var builder = CoconaApp.CreateBuilder();
 
